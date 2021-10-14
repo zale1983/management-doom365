@@ -24,6 +24,7 @@ namespace management_doom365
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddHealthChecks();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,6 +51,7 @@ namespace management_doom365
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+                endpoints.MapHealthChecks("/healthz");
             });
         }
     }
